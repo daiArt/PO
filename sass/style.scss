@@ -1,0 +1,277 @@
+// フォント設定
+
+    // 筑紫
+    @mixin tukushi($fontSize) {
+        font-family: fot-tsukuardgothic-std,sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: $fontSize;
+    }
+    
+    // marydale
+    @mixin marydale($fontSize) {
+        font-family: marydale, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: $fontSize;
+    }
+    
+    // ロンドB
+    @mixin rondo($fontSize) {
+        font-family: marydale, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: $fontSize;
+    }
+
+
+
+// 基本設定
+
+body {
+    font-size: 16px;
+    scroll-snap-type: y mandatory;
+    
+    @media screen and(max-width:900px) {
+        font-size: 3.4vw;
+    }
+
+    a {
+        text-decoration: underline;
+        color: white;
+    }
+    
+    img {
+        width: 100%;;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    span {
+        display: block;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    flex-shrink: 0;    
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+@mixin flex($justify,$align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+
+// 詳細設定
+
+body {
+    width: 100%;
+
+    .front {
+        width: 100vw;
+        height: 85vh;
+        position: relative;
+        top: 0;
+        left: 0;
+        @include flex(center,center);
+
+        .top {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            @include flex(space-around,center);
+
+            .top-left {
+                width: 40%;
+                height: 100%;
+                @include flex(center,center);
+                @include marydale(clamp(30px,5vw,60px));
+            }
+
+            .top-right {
+                width: 50%;
+                height: 100%;
+                position: relative;
+                @include flex(center,center);
+
+                .top-circle-box {
+                    width: 30vw;
+                    height: 30vw;
+                    position: relative;
+
+                    .top-right-circle {
+                        width: 30vw;
+                        height: 30vw;
+                        position: absolute;
+                        border-radius: 100%;
+                        overflow: hidden;
+                        z-index: 1;
+                        @include flex(center,center);
+                    }
+    
+                    .my-img {
+                        z-index: 2;
+                    }
+    
+                    .color-circle {
+                        opacity: 0.8;
+                    }
+    
+                    #circle1 {
+                        top: -3vw;
+                        right: -5vw;
+                    }
+
+                    #circle2 {
+                        top: -4vw;
+                        right: 5vw;
+                    }
+
+                    #circle3 {
+                        top: 3vw;
+                        right: 6vw;
+                    }
+
+                    #circle4 {
+                        top: 5vw;
+                        right: -3vw;
+                    }
+                }
+            }
+        }
+    }
+
+    .menu {
+        width: 90vw;
+        height: 15vh;
+        position: absolute;
+        bottom: 0;
+        left: 5vw;
+        border-top: solid 1px black;
+        @include flex(space-around,center);
+
+        .nav-button {
+            width: 20%;
+            height: 100%;
+            @include flex(center,center);
+
+            h2 {
+                @include marydale(clamp(24px,3vw,50px));
+            }
+        }
+    }
+
+    .background {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        @include flex(center,center);
+
+        .triangle-box {
+            width: 100vw;
+            height: 70%;
+            margin-bottom: 15vh;
+
+            .triangle-upper {
+                width: 95%;
+                height: 50%;
+                margin-right: 5%;
+                @include flex(space-around,center);
+            }
+
+            .triangle-lower {
+                width: 95%;
+                height: 50%;
+                margin-left: 5%;
+                @include flex(space-around,center);
+            }
+
+            .triangle {
+                width: 5vw;
+                height: 10vw;
+                clip-path: polygon(0 0, 0 100%, 100% 50%);
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+            
+            .triangle-animation {
+                animation: triangle-pop 1s ease-in-out forwards;
+            }
+
+            @keyframes triangle-pop {
+                0% {
+                    transform: translateY(0);
+                    opacity: 0.5;
+                }
+
+                50% {
+                    transform: translateY(-20px);
+                    opacity: 1;
+                }
+
+                100% {
+                    transform: translateY(0);
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+
+    .load {
+        width: 100vw;
+        height: 100vh;
+        padding-bottom: 15vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background: rgba(0,0,0,0.5);
+        backdrop-filter: blur(5px);
+        @include flex(center,center);
+        color: white;
+
+        h1 {
+            @include marydale(clamp(60px,10vw,120px));
+            animation: load-text-animatino 1s infinite;
+        }
+
+        @keyframes load-text-animatino {
+            0% {
+                transform: scale(1);
+            }
+            10% {
+                transform: scale(1.1);
+            }
+            20% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1);
+            }
+            35% {
+                transform: scale(1.1);
+            }
+            45% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
+}
