@@ -42,8 +42,36 @@ $(function() {
 
 
 
+    // トップのアニメーションの準備
+    // テキスト編
 
-    // ローディングアニメーション
+    const topTextBox = ['','D','a','i','/','A','r','t','P','o','r','t','f','o','l','i','o'];
+    let topTextTarget = '';
+
+    for (i = 1; i <=16; i++) {
+
+        if (i <= 7) {
+            topTextTarget = 'upper'
+        } else if (i > 7) {
+            topTextTarget = 'lower'
+        }
+
+        $(".text-" + topTextTarget).append('<span class="top-text' + i + '"><h1>' + topTextBox[i] + '</h1></span>')
+    }
+
+
+    // 右側用
+
+        const circleColor = ['','#709BB7','#142A49','#7D6459','#AC382C'];
+
+        for(i = 1; i<= 4; i++) {
+            $(".top-circle-box").prepend('<div class="color-circle top-right-circle" id="top-circle' + i + '" style="background: ' + circleColor[i] + '"></div>')
+        }
+
+
+
+
+    // ローディングアニメーションから
 
     triAnimation1();
 
@@ -57,22 +85,63 @@ $(function() {
             $(".load").css({
                 display: 'none'
             })
+
+            $(".front").css({
+                opacity: 1
+            })
+
+            // menuのアニメーション
+
+            $(".menu").addClass('menu-load-animation');
+            $(".nav-button").addClass('nav-button-animation');
+
+
+            // topのアニメーション開始
+            // テキスト編
+
+            let topTextCount = 0;
+
+            let topCircleCount = 0;
+
+
+            let topTextAnimatino = setInterval(function() {
+
+                topTextCount += 1;
+
+                if (topTextCount <= 16) {
+
+                    $(".top-text" + topTextCount).addClass('top-text-animation');
+
+                } else {
+                    clearInterval(topTextAnimatino);
+                }
+
+                topCircleCount += 1;
+
+                if (topCircleCount <= 4) {
+
+                    $("#top-circle" + topCircleCount).addClass('top-circle-animation');
+                    
+                }
+
+            },50)
+
+            // 画像 (左側)編
+
+            setTimeout (function() {
+                $(".top-my-img").addClass('top-my-img-animation');
+            },400)
+
         },500)
 
-    },2500)
+    })//,2500
 
 
 
-
-    // 自分の画像のところのアニメーション
-
-    const circleColor = ['','#709BB7','#142A49','#7D6459','#AC382C'];
+    // About用のアニメーション
 
     for(i = 1; i<= 4; i++) {
-        $(".top-circle-box").prepend('<div class="color-circle top-right-circle" id="circle' + i + '" style="background: ' + circleColor[i] + '"></div>')
+        $(".about-circle-box").prepend('<div class="color-circle about-circle" id="about-circle' + i + '" style="background: ' + circleColor[i] + '"></div>')
     }
-
-
-
 
 })

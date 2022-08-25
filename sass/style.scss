@@ -24,6 +24,14 @@
         font-size: $fontSize;
     }
 
+    // Belarius 
+    @mixin Belarius($fontSize) {
+        font-family: belarius-poster, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: $fontSize;
+    }
+
 
 
 // 基本設定
@@ -83,23 +91,64 @@ body {
         position: relative;
         top: 0;
         left: 0;
-        @include flex(center,center);
+        opacity: 0;
+        overflow: hidden;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory; 
+        @include flex(left,center);
 
         .top {
             width: 100%;
             height: 100%;
+            padding: 0 10%;
             position: relative;
             @include flex(space-around,center);
+            display: none;
 
             .top-left {
-                width: 40%;
+                width: 35vw;
                 height: 100%;
                 @include flex(center,center);
-                @include marydale(clamp(30px,5vw,60px));
+                
+                .top-text {
+                    width: 100%;
+                    overflow: hidden;
+
+                    span {
+                        transform: translateY(100%);
+                        
+
+                        h1 {
+                            @include marydale(clamp(40px,8vw,100px));
+                            font-weight: 200;;
+                        }
+                    }
+
+                    .top-text-animation {
+                        animation: top-text-animation 1s ease-in-out forwards;
+                    }
+
+                    @keyframes top-text-animation {
+                        0% {
+                            transform: translateY(100%);
+                        }
+
+                        100% {
+                            transform: translateY(0%);
+                        }
+                    }
+                    
+
+                }
+                
+                .top-text > div {
+                    overflow-y: hidden;
+                    @include flex(left,center)
+                }
             }
 
             .top-right {
-                width: 50%;
+                width: 30vw;
                 height: 100%;
                 position: relative;
                 @include flex(center,center);
@@ -119,36 +168,284 @@ body {
                         @include flex(center,center);
                     }
     
-                    .my-img {
+                    .top-my-img {
                         z-index: 2;
+                        transform: translateY(-10%);
+                        opacity: 0;
+                    }
+
+                    .top-my-img-animation {
+                        animation: top-my-img-animatino 0.5s ease-in-out forwards;
+                    }
+
+                    @keyframes top-my-img-animatino {
+                        0% {
+                            transform: translateY(-10%);
+                            opacity: 0;
+                        }
+
+                        100% {
+                            transform: translateY(0);
+                            opacity: 1;
+                        }
                     }
     
                     .color-circle {
                         opacity: 0.8;
+                        transform: scale(1);
+                        transform-origin: center;
+                        animation: top-color-circle-animation-set 0.1s ease-out forwards;
+                    }
+                    
+                    .top-circle-animation {
+                        animation: top-color-circle-animation 1.5s ease-out reverse forwards;
                     }
     
-                    #circle1 {
-                        top: -3vw;
-                        right: -5vw;
+                    #top-circle1 {
+                        top: -10%;
+                        right: -16%;
                     }
 
-                    #circle2 {
-                        top: -4vw;
-                        right: 5vw;
+                    #top-circle2 {
+                        top: -13%;
+                        right: 16%;
                     }
 
-                    #circle3 {
-                        top: 3vw;
-                        right: 6vw;
+                    #top-circle3 {
+                        top: 10%;
+                        right: 19%;
                     }
 
-                    #circle4 {
-                        top: 5vw;
-                        right: -3vw;
+                    #top-circle4 {
+                        top: 16%;
+                        right: -10%;
+                    }
+
+                    @keyframes top-color-circle-animation-set {
+                        100% {
+                            transform: scale(0);
+                            top: 0;
+                            right: 0;
+                            opacity: 0;
+                        }
+                    }
+
+                    @keyframes top-color-circle-animation {
+                        100% {
+                            transform: scale(0);
+                            top: 0;
+                            right: 0;
+                            opacity: 0;
+                        }
                     }
                 }
             }
         }
+
+        .about {
+            width: 100vw;
+            height: 100%;
+            position: relative;
+            @include flex(space-around,center);
+            display: none;
+
+            .about-left {
+                width: 35vw;
+                
+                .about-circle-box {
+                    width: 20vw;
+                    height: 20vw;
+                    margin: 0 auto;
+                    margin-bottom: 5vw;
+                    position: relative;
+
+                    .about-circle {
+                        width: 20vw;
+                        height: 20vw;;
+                        position: absolute;
+                        border-radius: 100%;
+                        overflow: hidden;
+                        z-index: 1;
+                        @include flex(center,center);
+                    }
+
+                    .about-my-img {
+                        z-index: 2;
+                        // transform: translateY(-10%);
+                        // opacity: 0;
+                    }
+
+                    .about-my-animation {
+                        animation: about-my-img-animatino 0.5s ease-in-out forwards;
+                    }
+
+                    @keyframes about-my-img-animatino {
+                        0% {
+                            transform: translateY(-10%);
+                            opacity: 0;
+                        }
+
+                        100% {
+                            transform: translateY(0);
+                            opacity: 1;
+                        }
+                    }
+
+                    .color-circle {
+                        opacity: 0.8;
+                        transform: scale(1);
+                        transform-origin: center;
+                        // animation: about-color-circle-animation-set 0.1s ease-out forwards;
+                    }
+
+                    .top-circle-animation {
+                        animation: about-color-circle-animation 1.5s ease-out reverse forwards;
+                    }
+
+                    #about-circle1 {
+                        top: -10%;
+                        right: -16%;
+                    }
+
+                    #about-circle2 {
+                        top: -13%;
+                        right: 16%;
+                    }
+
+                    #about-circle3 {
+                        top: 10%;
+                        right: 19%;
+                    }
+
+                    #about-circle4 {
+                        top: 16%;
+                        right: -10%;
+                    }
+
+                    @keyframes about-color-circle-animation-set {
+                        100% {
+                            transform: scale(0);
+                            top: 0;
+                            right: 0;
+                            opacity: 0;
+                        }
+                    }
+
+                    @keyframes about-color-circle-animation {
+                        100% {
+                            transform: scale(0);
+                            top: 0;
+                            right: 0;
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .about-date {
+                    width: 100%;
+                    text-align: center;
+
+                    .about-name {
+                        @include marydale(clamp(24px,3.5vw,32px))
+                    }
+                    
+                    .about-age {
+                        @include marydale(clamp(18px,3vw,24px))
+                    }
+                }
+            }
+
+            .about-right {
+                width: 50vw;
+
+                .about-right-upper {
+                    margin-bottom: 2vw;
+                    @include Belarius(clamp(24px,3.5vw,32px));
+                }
+
+                .about-right-lower {
+                    @include tukushi(clamp(12px,2vw,16px));
+                }
+            }
+        }
+
+        .work {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            @include flex(space-around,center);
+
+            .work-left {
+                width: 35vw;
+                height: 60%;
+                @include flex (center,flex-start);
+
+                .work-tittle {
+                    width: 25vw;
+                    height: 25vw;
+                    background: #EEDCBC;
+                    position: relative;
+                    z-index: 2;
+                    @include flex(left,center);
+
+                    h2 {
+                        position: relative;
+                        left: -10%;
+                        @include marydale(clamp(45px,8.5vw,110px));
+                    }
+
+                    .work-tittle-box-front {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        background: #EEDCBC;
+                    }
+
+                    .work-tittle-box-back {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        background: black;
+                        top: 3%;
+                        left: 3%;
+                    }
+                }
+            }
+
+            .work-right {
+                width: 60vw;
+                height: 100%;
+
+                .work-nav {
+                    width: 100%;
+                    height: 50%;
+                    @include flex(center,center);
+
+                    .work-nav-content {
+                        width: 70%;
+                        height: 100%;
+                    }
+
+                    .wr-work-nav-img {
+                        width: 30%;
+
+                        .work-nav-img {
+                            width: 100%;
+                            padding-top: 100%;
+                            background-size: cover;
+                            background-position: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .front > div {
+        width: 100%;
+        height: 100%;
+        scroll-snap-align: start; 
+        overflow: hidden;
     }
 
     .menu {
@@ -158,23 +455,62 @@ body {
         bottom: 0;
         left: 5vw;
         border-top: solid 1px black;
+        transform: translateY(100%);
         @include flex(space-around,center);
 
         .nav-button {
             width: 20%;
             height: 100%;
             @include flex(center,center);
+            opacity: 0;
+            transform: translateY(10%);
 
             h2 {
                 @include marydale(clamp(24px,3vw,50px));
             }
+
+            @keyframes nav-button-animation {
+                0% {
+                    opacity: 0;
+                    transform: translateY(10%);
+                }
+
+                50% {
+                    opacity: 0;
+                    transform: translateY(10%);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translateY(0%);
+                }
+            }
+        }
+
+        .nav-button-animation {
+            animation: nav-button-animation 1s ease-out forwards;
+        }
+
+    }
+
+    .menu-load-animation {
+        animation: menu-load-animation 0.5s ease-in-out forwards;
+    }
+
+    @keyframes menu-load-animation {
+        0% {
+            transform: translateY(100%);
+        }
+
+        100% {
+            transform: translateY(0);
         }
     }
 
     .background {
         width: 100vw;
         height: 100vh;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         z-index: -1;
@@ -242,6 +578,7 @@ body {
         backdrop-filter: blur(5px);
         @include flex(center,center);
         color: white;
+        display: none;
 
         h1 {
             @include marydale(clamp(60px,10vw,120px));
