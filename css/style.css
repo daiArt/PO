@@ -45,8 +45,7 @@ body {
       position: relative;
       display: flex;
       justify-content: space-around;
-      align-items: center;
-      display: none; }
+      align-items: center; }
       body .front .top .top-left {
         width: 35vw;
         height: 100%;
@@ -147,8 +146,7 @@ body {
       position: relative;
       display: flex;
       justify-content: space-around;
-      align-items: center;
-      display: none; }
+      align-items: center; }
       body .front .about .about-left {
         width: 35vw; }
         body .front .about .about-left .about-circle-box {
@@ -228,12 +226,12 @@ body {
           font-family: belarius-poster, sans-serif;
           font-weight: 300;
           font-style: normal;
-          font-size: clamp(24px, 3.5vw, 32px); }
+          font-size: clamp(24px, 3.5vw, 50px); }
         body .front .about .about-right .about-right-lower {
           font-family: fot-tsukuardgothic-std,sans-serif;
           font-weight: 400;
           font-style: normal;
-          font-size: clamp(12px, 2vw, 16px); }
+          font-size: clamp(12px, 2vw, 18px); }
     body .front .work {
       width: 100%;
       height: 100%;
@@ -254,15 +252,14 @@ body {
           position: relative;
           z-index: 2;
           display: flex;
-          justify-content: left;
+          justify-content: center;
           align-items: center; }
           body .front .work .work-left .work-tittle h2 {
             position: relative;
-            left: -10%;
             font-family: marydale, sans-serif;
             font-weight: 400;
             font-style: normal;
-            font-size: clamp(45px, 8.5vw, 110px); }
+            font-size: clamp(45px, 8.5vw, 130px); }
           body .front .work .work-left .work-tittle .work-tittle-box-front {
             width: 100%;
             height: 100%;
@@ -277,23 +274,64 @@ body {
             left: 3%; }
       body .front .work .work-right {
         width: 60vw;
-        height: 100%; }
+        height: 90%;
+        margin: 5% 0; }
         body .front .work .work-right .work-nav {
           width: 100%;
-          height: 50%;
+          height: 45%;
+          margin: 2.5% 0;
           display: flex;
-          justify-content: center;
+          justify-content: space-around;
           align-items: center; }
           body .front .work .work-right .work-nav .work-nav-content {
-            width: 70%;
-            height: 100%; }
+            width: 60%; }
+            body .front .work .work-right .work-nav .work-nav-content .work-nav-tittle {
+              font-family: fot-tsukuardgothic-std,sans-serif;
+              font-weight: 400;
+              font-style: normal;
+              font-size: clamp(24px, 3.5vw, 40px);
+              display: flex;
+              justify-content: left;
+              align-items: center; }
+              body .front .work .work-right .work-nav .work-nav-content .work-nav-tittle h3 {
+                font-weight: 200;
+                margin-right: 5%; }
+            body .front .work .work-right .work-nav .work-nav-content .work-nav-text {
+              width: 95%;
+              margin-left: 5%;
+              padding-left: 5%;
+              border-left: solid 1px black;
+              font-family: fot-tsukuardgothic-std,sans-serif;
+              font-weight: 400;
+              font-style: normal;
+              font-size: clamp(10px, 1.9vw, 16px); }
           body .front .work .work-right .work-nav .wr-work-nav-img {
             width: 30%; }
             body .front .work .work-right .work-nav .wr-work-nav-img .work-nav-img {
-              width: 100%;
-              padding-top: 100%;
+              width: 80%;
+              padding-top: 80%;
               background-size: cover;
               background-position: center; }
+    body .front .contact {
+      width: 100%;
+      position: relative;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      body .front .contact .contact-inner {
+        width: 100%; }
+        body .front .contact .contact-inner .sorryText {
+          font-family: marydale, sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          font-size: clamp(40px, 18vw, 100px); }
+        body .front .contact .contact-inner .contact-stop-text {
+          margin-top: 5vh;
+          font-family: fot-tsukuardgothic-std,sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          font-size: clamp(20px, 3vw, 40px); }
   body .front > div {
     width: 100%;
     height: 100%;
@@ -322,7 +360,19 @@ body {
         font-family: marydale, sans-serif;
         font-weight: 400;
         font-style: normal;
-        font-size: clamp(24px, 3vw, 50px); }
+        font-size: clamp(24px, 3vw, 50px);
+        opacity: 0.5; }
+      body .menu .nav-button h2:hover {
+        animation: menu-h2-on 0.2s forwards; }
+      body .menu .nav-button .menu-h2-on {
+        animation: menu-h2-on 0.5s forwards; }
+@keyframes menu-h2-on {
+  0% {
+    transform: scale(1);
+    opacity: 0.5; }
+  100% {
+    transform: scale(1.2);
+    opacity: 1; } }
 @keyframes nav-button-animation {
   0% {
     opacity: 0;
@@ -401,8 +451,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    display: none; }
+    color: white; }
     body .load h1 {
       font-family: marydale, sans-serif;
       font-weight: 400;

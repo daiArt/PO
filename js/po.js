@@ -104,7 +104,7 @@ $(function() {
             let topCircleCount = 0;
 
 
-            let topTextAnimatino = setInterval(function() {
+            let topTextAnimatinon = setInterval(function() {
 
                 topTextCount += 1;
 
@@ -113,7 +113,7 @@ $(function() {
                     $(".top-text" + topTextCount).addClass('top-text-animation');
 
                 } else {
-                    clearInterval(topTextAnimatino);
+                    clearInterval(topTextAnimatinon);
                 }
 
                 topCircleCount += 1;
@@ -142,6 +142,27 @@ $(function() {
 
     for(i = 1; i<= 4; i++) {
         $(".about-circle-box").prepend('<div class="color-circle about-circle" id="about-circle' + i + '" style="background: ' + circleColor[i] + '"></div>')
+    }
+    
+    function aboutAnimation() {
+
+        let aboutCircleCount = 0;
+
+        let aboutCircleAnimation = setInterval(function() {
+
+            aboutCircleCount += 1;
+
+            if (aboutCircleCount <= 4) {
+                $("#aboutcircle" + aboutCircleCount).addClass('top-circle-animation');;
+            }
+
+            else {
+                clearInterval(aboutCircleAnimation);
+            }
+
+
+        })
+
     }
 
 })
