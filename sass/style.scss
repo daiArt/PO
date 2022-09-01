@@ -498,54 +498,21 @@ body {
             width: 20%;
             height: 100%;
             @include flex(center,center);
-            opacity: 0;
             transform: translateY(10%);
 
             h2 {
-                @include marydale(clamp(24px,3vw,50px));
                 opacity: 0.5;
+                @include marydale(clamp(24px,3vw,50px));
             }
 
             h2:hover {
-                animation: menu-h2-on 0.2s forwards;
-            }
-
-            .menu-h2-on {
-                animation: menu-h2-on 0.5s forwards;
-            }
-
-            @keyframes menu-h2-on {
-                0% {
-                    transform: scale(1);
-                    opacity: 0.5;
-                }
-
-                100% {
-                    transform: scale(1.2);
-                    opacity: 1;
-                }
-            }
-
-            @keyframes nav-button-animation {
-                0% {
-                    opacity: 0;
-                    transform: translateY(10%);
-                }
-
-                50% {
-                    opacity: 0;
-                    transform: translateY(10%);
-                }
-
-                100% {
-                    opacity: 1;
-                    transform: translateY(0%);
-                }
+                opacity: 1;
+                transform: scale(1.2);
             }
         }
 
-        .nav-button-animation {
-            animation: nav-button-animation 1s ease-out forwards;
+        #menu1 > h2 {
+            opacity: 1;
         }
 
     }
