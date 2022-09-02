@@ -239,7 +239,7 @@ $(function() {
             menuClickGoal = Number(menuClickGoal),
             sessionStorage.setItem('jumpPage',menuClickGoal),
         ).done(function() {
-            window.location.href = '/PO/index.html';
+            window.location.href = 'https://daiart.github.io/PO/';
         })
 
     })
