@@ -579,9 +579,16 @@ body {
 
                 .work-file {
                     width: 100%;
-                    text-align: center;
                     @include tukushi(clamp(12px,2vw,18px));
                     margin-top: 3vw;
+
+                    a {
+                        color: black;
+
+                        p {
+                            margin: 0 auto;
+                        }
+                    }
                 }
             }
         }

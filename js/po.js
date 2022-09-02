@@ -1,4 +1,5 @@
 $(function() {
+
     
     // widowサイズが変更された際に再設定する必要がある初期設定
 
@@ -24,6 +25,16 @@ $(function() {
         initialSetting();
 
     })
+
+    // workの子要素内のmenuを使用してきた場合
+
+    let checkStorage = sessionStorage.getItem('jumpPage');
+
+    if(checkStorage > 0) {
+        $(".front").scrollLeft(pageWidth * (checkStorage - 1));
+
+        sessionStorage.clear();
+    }
 
     // 背景の三角形の初期設定
 
@@ -214,6 +225,23 @@ $(function() {
         menuClickGoal = Number(menuClickGoal);
 
         $(".front").scrollLeft(pageWidth * (menuClickGoal - 1));
+    })
+
+    // workの子要素内でmenuをクリック
+
+
+
+    $(".work-nav").click(function() {
+
+        $.when(
+            menuClickGoal = $(this).attr('id'),
+            menuClickGoal = menuClickGoal.slice(-1),
+            menuClickGoal = Number(menuClickGoal),
+            sessionStorage.setItem('jumpPage',menuClickGoal),
+        ).done(function() {
+            window.location.href = '/index.html';
+        })
+
     })
 
 })
