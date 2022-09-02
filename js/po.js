@@ -1,6 +1,5 @@
 $(function() {
-
-
+    
     // widowサイズが変更された際に再設定する必要がある初期設定
 
     let pageWidth = 0;
