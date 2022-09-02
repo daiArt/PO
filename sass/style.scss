@@ -550,6 +550,7 @@ body {
                 .work-image-tate {
                     width: 22vw;
                     height: 30vw;
+                    margin: 0 auto;
                     background-size: cover;
                     background-position: center;
                 }
@@ -557,6 +558,7 @@ body {
                 .work-image-yoko {
                     width: 22vw;
                     height: 15vw;
+                    margin: 0 auto;
                     background-size: cover;
                     background-position: center;
                 }
@@ -564,8 +566,16 @@ body {
                 .work-image-seihou {
                     width: 15vw;
                     height: 15vw;
+                    margin: 0 auto;
                     background-size: cover;
                     margin-bottom: 5px;
+                }
+
+                .work-date {
+                    width: 100%;
+                    text-align: center;
+                    @include tukushi(clamp(12px,2vw,18px));
+                    margin-top: 3vw;
                 }
             }
         }
@@ -589,7 +599,7 @@ body {
         transform: translateY(100%);
         @include flex(space-around,center);
 
-        .nav-button {
+        .nav-button, .work-nav {
             width: 20%;
             height: 100%;
             @include flex(center,center);
@@ -745,13 +755,5 @@ body {
                 transform: scale(1);
             }
         }
-    }
-
-    .load {
-        display: none !important;
-    }
-
-    .work-top {
-        display: none !important;
     }
 }

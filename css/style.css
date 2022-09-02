@@ -399,18 +399,29 @@ body {
         body .front .work-content .work-content-right .work-image-tate {
           width: 22vw;
           height: 30vw;
+          margin: 0 auto;
           background-size: cover;
           background-position: center; }
         body .front .work-content .work-content-right .work-image-yoko {
           width: 22vw;
           height: 15vw;
+          margin: 0 auto;
           background-size: cover;
           background-position: center; }
         body .front .work-content .work-content-right .work-image-seihou {
           width: 15vw;
           height: 15vw;
+          margin: 0 auto;
           background-size: cover;
           margin-bottom: 5px; }
+        body .front .work-content .work-content-right .work-date {
+          width: 100%;
+          text-align: center;
+          font-family: fot-tsukuardgothic-std,sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          font-size: clamp(12px, 2vw, 18px);
+          margin-top: 3vw; }
   body .front > div {
     width: 100%;
     height: 100%;
@@ -428,21 +439,21 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center; }
-    body .menu .nav-button {
+    body .menu .nav-button, body .menu .work-nav {
       width: 20%;
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
       transform: translateY(10%); }
-      body .menu .nav-button h2 {
+      body .menu .nav-button h2, body .menu .work-nav h2 {
         opacity: 0.5;
         color: black;
         font-family: marydale, sans-serif;
         font-weight: 400;
         font-style: normal;
         font-size: clamp(24px, 3vw, 50px); }
-      body .menu .nav-button h2:hover {
+      body .menu .nav-button h2:hover, body .menu .work-nav h2:hover {
         opacity: 1;
         transform: scale(1.2); }
   body .menu-load-animation {
@@ -548,9 +559,5 @@ body {
     transform: scale(1); }
   100% {
     transform: scale(1); } }
-  body .load {
-    display: none !important; }
-  body .work-top {
-    display: none !important; }
 
 /*# sourceMappingURL=style.css.map */
