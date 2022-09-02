@@ -32,6 +32,12 @@
         font-size: $fontSize;
     }
 
+    @mixin flex($justify,$align) {
+        display: flex;
+        justify-content: $justify;
+        align-items: $align;
+    }
+
 
 
 // 基本設定
@@ -46,7 +52,7 @@ body {
 
     a {
         text-decoration: underline;
-        color: white;
+        @include flex(left,center);
     }
     
     img {
@@ -71,12 +77,6 @@ body {
 
 *::-webkit-scrollbar {
     display: none;
-}
-
-@mixin flex($justify,$align) {
-    display: flex;
-    justify-content: $justify;
-    align-items: $align;
 }
 
 
@@ -430,10 +430,16 @@ body {
                             @include tukushi(clamp(24px,3.5vw,40px));
                             @include flex(left,center);
 
-                            h3 {
-                                font-weight: 200;
-                                margin-right: 5%;
+                            a {
+                                text-decoration: none;
+                                color: black;
+                                
+                                h3 {
+                                    font-weight: 200;
+                                    margin-right: 5%;
+                                }
                             }
+
                         }
 
                         .work-nav-text {

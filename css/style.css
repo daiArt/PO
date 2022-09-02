@@ -6,7 +6,9 @@ body {
       font-size: 3.4vw; } }
   body a {
     text-decoration: underline;
-    color: white; }
+    display: flex;
+    justify-content: left;
+    align-items: center; }
   body img {
     width: 100%; }
   body li {
@@ -293,9 +295,12 @@ body {
               display: flex;
               justify-content: left;
               align-items: center; }
-              body .front .work .work-right .work-nav .work-nav-content .work-nav-tittle h3 {
-                font-weight: 200;
-                margin-right: 5%; }
+              body .front .work .work-right .work-nav .work-nav-content .work-nav-tittle a {
+                text-decoration: none;
+                color: black; }
+                body .front .work .work-right .work-nav .work-nav-content .work-nav-tittle a h3 {
+                  font-weight: 200;
+                  margin-right: 5%; }
             body .front .work .work-right .work-nav .work-nav-content .work-nav-text {
               width: 95%;
               margin-left: 5%;
