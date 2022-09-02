@@ -11,9 +11,7 @@ $(function() {
         pageWidth = $(window).width();
 
         for(i = 1; i<= 4; i++) {
-
             pageSwichPosition.push(pageWidth * i);
-
         }
     }
 

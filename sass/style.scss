@@ -97,20 +97,33 @@ body {
         scroll-snap-type: x mandatory; 
         @include flex(left,center);
 
+        @media screen and(max-width: 900px) {
+            height: 100vh;
+        }
+
 
         // index.html
 
         .top {
             width: 100%;
             height: 100%;
-            padding: 0 10%;
+            padding: 0 10vw;
             position: relative;
             @include flex(space-around,center);
+
+            @media screen and (max-width: 900px) {
+                display: block;
+            }
 
             .top-left {
                 width: 35vw;
                 height: 100%;
                 @include flex(center,center);
+
+                @media screen and(max-width: 900px) {
+                    width: 80vw;
+                    height: 40vh;
+                }
                 
                 .top-text {
                     width: 100%;
@@ -121,7 +134,7 @@ body {
                         
 
                         h1 {
-                            @include marydale(clamp(40px,8vw,100px));
+                            @include marydale(clamp(50px,10vw,100px));
                             font-weight: 200;;
                         }
                     }
@@ -145,7 +158,7 @@ body {
                 
                 .top-text > div {
                     overflow-y: hidden;
-                    @include flex(left,center)
+                    @include flex(center,center);
                 }
             }
 
@@ -154,6 +167,10 @@ body {
                 height: 100%;
                 position: relative;
                 @include flex(center,center);
+                @media screen and(max-width: 900px) {
+                    width: 80vw;
+                    height: 45vh;
+                }
 
                 .top-circle-box {
                     width: 30vw;
@@ -247,11 +264,12 @@ body {
         .about {
             width: 100vw;
             height: 100%;
+            padding: 0 10vw;
             position: relative;
             @include flex(space-around,center);
 
             .about-left {
-                width: 35vw;
+                width: 35vw !important;
                 
                 .about-circle-box {
                     width: 20vw;
@@ -357,7 +375,7 @@ body {
             }
 
             .about-right {
-                width: 50vw;
+                width: 50vw !important;
 
                 .about-right-upper {
                     margin-bottom: 2vw;
@@ -376,22 +394,53 @@ body {
             position: relative;
             @include flex(space-around,center);
 
+            @media screen and(max-width: 900px) {
+                display: block;
+            }
+
             .work-left {
                 width: 35vw;
                 height: 60%;
                 @include flex (center,flex-start);
 
+                @media screen and(max-width: 900px) {
+                    display: block;
+                    width: 70% !important;
+                    height: auto !important;
+                    margin: 0 auto;
+                    margin-top: 5vh;
+                    height: 10vh;
+                }
+
+                .wr-background-image {
+                    width: 85vh;
+                    height: 85vh;
+                    position: absolute;
+                    z-index: -10;
+                    top: 0;
+                    left: 0;
+                    @include flex(center,center);
+        
+                    .background-image {
+                        width: 120vh;
+                        height: 120vh;
+                        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+                        background-size: cover;
+                        background-position: center;
+                    }
+                }
+
                 .work-tittle {
                     width: 25vw;
                     height: 25vw;
-                    background: #EEDCBC;
                     position: relative;
                     z-index: 2;
-                    @include flex(center,center);
 
                     h2 {
                         position: relative;
-                        @include marydale(clamp(45px,8.5vw,130px));
+                        color: white;
+                        text-shadow: 2px 3px 6px black;
+                        @include marydale(clamp(50px,12vw,140px));
                     }
 
                     .work-tittle-box-front {
@@ -422,6 +471,11 @@ body {
                     height: 45%;
                     margin: 2.5% 0;
                     @include flex(space-around,center);
+
+                    @media screen and(max-width: 900px) {
+                        height: 30vh !important;
+                        margin-top: 5vh;
+                    }
 
                     .work-nav-content {
                         width: 60%;
@@ -568,7 +622,7 @@ body {
                     background-size: cover;
                     background-position: center;
                 }
-background-image: url();
+background-image: url(../index.html);
                 .work-image-seihou {
                     width: 15vw;
                     height: 15vw;
@@ -601,6 +655,12 @@ background-image: url();
         overflow: hidden;
     }
 
+    .front > div > div {
+        @media screen and(max-width: 900px) {
+            width: 100% !important;
+        }
+    }
+
     .menu {
         width: 90vw;
         height: 15vh;
@@ -611,6 +671,10 @@ background-image: url();
         border-top: solid 1px black;
         transform: translateY(100%);
         @include flex(space-around,center);
+
+        @media screen and(max-width: 900px) {
+            display: none;
+        }
 
         .nav-button, .work-nav {
             width: 20%;
@@ -652,7 +716,7 @@ background-image: url();
         position: fixed;
         top: 0;
         left: 0;
-        z-index: -1;
+        z-index: -11;
         @include flex(center,center);
 
         .triangle-box {
@@ -769,4 +833,8 @@ background-image: url();
             }
         }
     }
+}
+
+.load, .top, .about {
+    display: none !important;
 }
