@@ -179,7 +179,7 @@ $(function() {
 
         // 現在の位置を取得
 
-        scrollScale = $(".top").offset();
+        scrollScale = $(".front > div:first").offset();
         scrollScaleValue = scrollScale.left * -1;
 
         for(i = 1; i <= 4; i++) {
@@ -194,11 +194,11 @@ $(function() {
 
         // 全てのページ時に共通で行うこと
 
-        $(".nav-button > h2").css({
+        $(".nav-button h2").css({
             opacity: 0.5
         })
 
-        $("#menu" + pageCount + " > h2").css({
+        $("#menu" + pageCount + " h2").css({
             opacity: 1
         })
 

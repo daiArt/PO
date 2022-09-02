@@ -97,6 +97,9 @@ body {
         scroll-snap-type: x mandatory; 
         @include flex(left,center);
 
+
+        // index.html
+
         .top {
             width: 100%;
             height: 100%;
@@ -475,6 +478,97 @@ body {
                 }
             }
         }
+
+
+        // proN.html
+
+        .work-top {
+            width: 100%;
+            height: 100%;
+            padding: 0 10%;
+            position: relative;
+            @include flex(right,center);
+
+            .work-top-inner {
+                width: 60%;
+                padding-right: 5%;
+            
+                h2 {
+                    @include marydale(clamp(45px,8.5vw,130px));
+                    margin-bottom: 10vh;
+                }
+
+                p {
+                    @include tukushi(clamp(12px,2vw,18px));
+                }
+            }
+        }
+
+        .work-content {
+            width: 100vw;
+            height: 100%;
+            position: relative;
+            @include flex(space-around,center);
+
+            .right-top {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 10px;
+                @include marydale(clamp(22px,3.5vw,60px));
+            }
+
+            .work-content-left {
+                width: 50%;
+
+                .work-content-tittle h3 {
+                    @include tukushi(clamp(35px,4vw,60px));
+                    font-weight: 200;
+                }
+
+                .work-content-text {
+                    width: 100%;
+                    max-height: 45vh;
+                    overflow: scroll;
+                    margin-top: 5vh;
+                    margin-left: 3vw;
+                    padding-left: 3vw;
+                    border-left: solid 1px black;
+
+                    p {
+                        padding: 5px 0;
+                        @include tukushi(clamp(12px,2vw,18px));
+                        font-weight: 200;
+                        text-shadow: 1px 1px 4px white;
+                    }
+                }
+            }
+
+            .work-content-right {
+                width: 25%;
+
+                .work-image-tate {
+                    width: 22vw;
+                    height: 30vw;
+                    background-size: cover;
+                    background-position: center;
+                }
+                
+                .work-image-yoko {
+                    width: 22vw;
+                    height: 15vw;
+                    background-size: cover;
+                    background-position: center;
+                }
+
+                .work-image-seihou {
+                    width: 15vw;
+                    height: 15vw;
+                    background-size: cover;
+                    margin-bottom: 5px;
+                }
+            }
+        }
     }
 
     .front > div {
@@ -490,6 +584,7 @@ body {
         position: absolute;
         bottom: 0;
         left: 5vw;
+        background: white;
         border-top: solid 1px black;
         transform: translateY(100%);
         @include flex(space-around,center);
@@ -502,6 +597,7 @@ body {
 
             h2 {
                 opacity: 0.5;
+                color: black;
                 @include marydale(clamp(24px,3vw,50px));
             }
 
@@ -509,10 +605,6 @@ body {
                 opacity: 1;
                 transform: scale(1.2);
             }
-        }
-
-        #menu1 > h2 {
-            opacity: 1;
         }
 
     }
@@ -588,6 +680,26 @@ body {
                 }
             }
         }
+
+
+        // workの子要素のみ
+
+        .wr-background-image {
+            width: 85vh;
+            height: 85vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include flex(center,center);
+
+            .background-image {
+                width: 120vh;
+                height: 120vh;
+                clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+                background-size: cover;
+                background-position: center;
+            }
+        }
     }
 
     .load {
@@ -633,5 +745,13 @@ body {
                 transform: scale(1);
             }
         }
+    }
+
+    .load {
+        display: none !important;
+    }
+
+    .work-top {
+        display: none !important;
     }
 }
