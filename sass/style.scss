@@ -473,12 +473,16 @@ body {
                     @include flex(space-around,center);
 
                     @media screen and(max-width: 900px) {
-                        height: 30vh !important;
+                        height: 25vh !important;
                         margin-top: 5vh;
                     }
 
                     .work-nav-content {
                         width: 60%;
+
+                        @media screen and(max-width: 900px) {
+                            width: 40%;
+                        }
 
                         .work-nav-tittle {
                             @include tukushi(clamp(24px,3.5vw,40px));
@@ -502,6 +506,7 @@ body {
                             padding-left: 5%;
                             border-left: solid 1px black;
                             @include tukushi(clamp(10px,1.9vw,16px));
+                            
                         }
                     }
 
@@ -833,8 +838,4 @@ background-image: url(../index.html);
             }
         }
     }
-}
-
-.load, .top, .about {
-    display: none !important;
 }
