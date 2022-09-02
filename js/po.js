@@ -239,7 +239,7 @@ $(function() {
             menuClickGoal = Number(menuClickGoal),
             sessionStorage.setItem('jumpPage',menuClickGoal),
         ).done(function() {
-            window.location.href = '/index.html';
+            window.location.href = '/PO/index.html';
         })
 
     })
